@@ -4,13 +4,13 @@ import PropTypes from 'prop-types';
 import './movie-list.scss';
 
 import { SwiperSlide, Swiper } from 'swiper/react';
-/* import { Link } from 'react-router-dom'; */
+import { Link } from 'react-router-dom';
 
-/* import Button from '../button/Button';
-import OutlineButton from '../button/OutlineButton'; */
+import Button from '../button/Button';
+import OutlineButton from '../button/OutlineButton';
 
 import tmdbApi, { category } from '../../api/tmdbApi';
-/* import apiConfig from '../../api/apiConfig'; */
+import apiConfig from '../../api/apiConfig';
 
 import MovieCard from '../movie-card/MovieCard';
 
@@ -39,16 +39,14 @@ const MovieList = props => {
 	}, []);
 
 	return (
-		<div>
-			<div className='movie-list'>
-				<Swiper grabCursor={true} spaceBetween={10} slidesPerView={'auto'}>
-					{items.map((item, i) => (
-						<SwiperSlide key={i}>
-							<MovieCard item={item} category={props.category} />
-						</SwiperSlide>
-					))}
-				</Swiper>
-			</div>
+		<div className='movie-list'>
+			<Swiper grabCursor={true} spaceBetween={10} slidesPerView={'auto'}>
+				{items.map((item, i) => (
+					<SwiperSlide key={i}>
+						<MovieCard item={item} category={props.category} />
+					</SwiperSlide>
+				))}
+			</Swiper>
 		</div>
 	);
 };

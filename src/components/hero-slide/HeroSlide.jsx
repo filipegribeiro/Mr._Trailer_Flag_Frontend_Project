@@ -11,7 +11,7 @@ import tmdbApi, { category, movieType } from '../../api/tmdbApi';
 import apiConfig from '../../api/apiConfig';
 
 import './hero-slide.scss';
-import { useHistory } from 'react-router-dom'; // ou react-router-dom
+import { useNavigate } from 'react-router-dom'; // ou react-router-dom
 
 const HeroSlide = () => {
 	SwiperCore.use([Autoplay]);
@@ -22,7 +22,7 @@ const HeroSlide = () => {
 		const getMovies = async () => {
 			const params = { page: 1 };
 			try {
-				const response = await tmdbApi.getMovieList(movieType.popular, { params });
+				const response = await tmdbApi.getMoviesList(movieType.popular, { params });
 				setMovieItems(response.results.slice(1, 4));
 				console.log(response);
 			} catch {
@@ -34,9 +34,15 @@ const HeroSlide = () => {
 
 	return (
 		<div className='hero-slide'>
-			<Swiper modules={[Autoplay]} grabCursor={true} spaceBetween={0} slidesPerView={1} /* autoPlay={{ delay: 3000 }} */>
+			<Swiper
+				modules={[Autoplay]}
+				grabCursor={true}
+				spaceBetween={0}
+				slidesPerView={1}
+				// autoplay={{delay: 3000}}
+			>
 				{movieItems.map((item, i) => (
-					<SwiperSlide key={i}>{({ isActive }) => <HeroSlideItem item={item} className={`${isActive} ? "active" : ""}`} />}</SwiperSlide>
+					<SwiperSlide key={i}>{({ isActive }) => <HeroSlideItem item={item} className={`${isActive ? 'active' : ''}`} />}</SwiperSlide>
 				))}
 			</Swiper>
 			{movieItems.map((item, i) => (
@@ -47,18 +53,18 @@ const HeroSlide = () => {
 };
 
 const HeroSlideItem = props => {
-	let hisrory = useHistory();
+	let hisrory = useNavigate();
 
 	const item = props.item;
 
-	const background = apiConfig.originalImagem(item.backdrop_path ? item.backdrop_path : item.poster_path);
+	const background = apiConfig.originalImage(item.backdrop_path ? item.backdrop_path : item.poster_path);
 
 	const setModalActive = async () => {
 		const modal = document.querySelector(`#modal_${item.id}`);
 
 		const videos = await tmdbApi.getVideos(category.movie, item.id);
 
-		if (videos.results.legth > 0) {
+		if (videos.results.length > 0) {
 			const videSrc = 'https://www.youtube.com/embed/' + videos.results[0].key;
 			modal.querySelector('.modal__content > iframe').setAttribute('src', videSrc);
 		} else {
