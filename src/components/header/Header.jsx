@@ -1,13 +1,31 @@
 import React, { useRef, useEffect } from 'react';
 
-import { Link, NavLink } from 'react-router-dom';
+import { Link, NavLink, useLocation } from 'react-router-dom';
 
 import './header.scss';
 
-import logo from '../../assets/tmovie.png'; /* mudar aqui a foto de logo */
+import logo from '../../assets/tmovie.png';
+
+const headerNav = [
+	{
+		display: 'Home',
+		path: '/',
+	},
+	{
+		display: 'Movies',
+		path: '/movie',
+	},
+	{
+		display: 'TV Series',
+		path: '/tv',
+	},
+];
 
 const Header = () => {
+	const { pathname } = useLocation();
 	const headerRef = useRef(null);
+
+	const active = headerNav.findIndex(e => e.path === pathname);
 
 	useEffect(() => {
 		const shrinkHeader = () => {
@@ -24,57 +42,26 @@ const Header = () => {
 	}, []);
 
 	return (
-		<div ref={headerRef}>
-			<div className='header'>
-				<div className='header__wrap container'>
-					<div className='logo'>
-						<img src={logo} alt='' />
-						<Link to='/'>Mr. Movie</Link>
-					</div>
-					<ul className='header__nav'>
-						<li>
-							<NavLink to='/home'>Home</NavLink>
-						</li>
-
-						<li>
-							<NavLink to='/movies'>Movies</NavLink>
-						</li>
-
-						<li>
-							<NavLink to='/tvseries'>Tv Series</NavLink>
-						</li>
-					</ul>
+		<div ref={headerRef} className='header'>
+			<div className='header__wrap container'>
+				<div className='logo'>
+					<img src={logo} alt='' />
+					<Link to='/'>Mr. Movie</Link>
 				</div>
+				<ul className='header__nav'>
+					{headerNav.map((item, index) => {
+						const isActive = index === active;
+						const className = isActive ? 'active' : '';
+						return (
+							<li key={index} className={className}>
+								<NavLink to={item.path}>{item.display}</NavLink>
+							</li>
+						);
+					})}
+				</ul>
 			</div>
 		</div>
 	);
 };
 
 export default Header;
-
-/* Navlink já trás encapsulada lógica para active link através da inclusão de classe */
-
-/* <nav>
-
-	<ul className='navbar__menu'>
-		<li>
-			<NavLink to='/about'>About</NavLink>
-		</li>
-
-		<li>
-			<NavLink to='/team'>Team</NavLink>
-		</li>
-
-		<li>
-			<NavLink to='/services'>Services</NavLink>
-		</li>
-
-		<li>
-			<NavLink to='/blog'>Blog</NavLink>
-		</li>
-
-		<li>
-			<NavLink to='/contacts'>Contacts</NavLink>
-		</li>
-	</ul>
-</nav>; */

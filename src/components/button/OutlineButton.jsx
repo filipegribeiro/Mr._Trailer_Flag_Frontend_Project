@@ -1,6 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
+import './button.scss';
 import Button from './Button';
 
 const OutlineButton = props => {

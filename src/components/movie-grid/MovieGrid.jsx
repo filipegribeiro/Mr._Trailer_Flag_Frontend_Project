@@ -39,6 +39,8 @@ const MovieGrid = props => {
 			}
 			setItems(response.results);
 			setTotalPage(response.total_pages);
+
+			console.log('41', response.total_pages);
 		};
 		getList();
 	}, [props.category, keyword]);
@@ -90,15 +92,15 @@ const MovieGrid = props => {
 };
 
 const MovieSearch = props => {
-	const history = useNavigate();
+	const navigate = useNavigate();
 
 	const [keyword, setKeyword] = useState(props.keyword ? props.keyword : '');
 
 	const goToSearch = useCallback(() => {
 		if (keyword.trim().length > 0) {
-			history.push(`${category[props.category]}/search/${keyword}`);
+			navigate(`${category[props.category]}/search?query=${keyword}`);
 		}
-	}, [keyword, props.category, history]);
+	}, [keyword, props.category, navigate]);
 
 	useEffect(() => {
 		const enterEvent = e => {

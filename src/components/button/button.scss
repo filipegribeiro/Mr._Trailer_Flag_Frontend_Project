@@ -8,22 +8,22 @@ button {
 .btn {
 	border: 4px solid transparent;
 	background-color: $main-color;
-	color: $white;
+	color: $black;
 	border-radius: $border-radius;
 	padding: 0.5rem 1.8rem;
 	font-size: 1.5rem;
 	font-weight: 600;
-	box-shadow: 0px 0px 7px 8px #ff00004d;
+	box-shadow: 0px 0px 7px 8px #aaff004d;
 	transition: box-shadow 0.3s ease;
 	position: relative;
 }
 
 .btn:hover {
-	box-shadow: 0px 0px 7px 15px #ff00004d;
+	box-shadow: 0px 0px 7px 15px #aaff004d;
 }
 
 .btn-outline {
-	border: 3px solide $white;
+	border: 3px solid $white;
 	background-color: transparent;
 	color: $white;
 	box-shadow: unset;

@@ -1,21 +1,17 @@
 import React, { useState, useEffect, useRef } from 'react';
 
-import SwiperCore from 'swiper';
-import { Autoplay } from 'swiper/modules';
+import SwiperCore, { Autoplay } from 'swiper';
 import { Swiper, SwiperSlide } from 'swiper/react';
 
 import Button from '../button/Button';
 import OutlineButton from '../button/OutlineButton';
-
 import Modal, { ModalContent } from '../modal/Modal';
 
 import tmdbApi, { category, movieType } from '../../api/tmdbApi';
-
 import apiConfig from '../../api/apiConfig';
 
 import './hero-slide.scss';
-
-import { useNavigate } from 'react-router';
+import { useNavigate } from 'react-router-dom'; // ou react-router-dom
 
 const HeroSlide = () => {
 	SwiperCore.use([Autoplay]);
@@ -25,7 +21,6 @@ const HeroSlide = () => {
 	useEffect(() => {
 		const getMovies = async () => {
 			const params = { page: 1 };
-
 			try {
 				const response = await tmdbApi.getMoviesList(movieType.popular, { params });
 				setMovieItems(response.results.slice(1, 4));
@@ -34,7 +29,6 @@ const HeroSlide = () => {
 				console.log('error');
 			}
 		};
-
 		getMovies();
 	}, []);
 
@@ -51,7 +45,6 @@ const HeroSlide = () => {
 					<SwiperSlide key={i}>{({ isActive }) => <HeroSlideItem item={item} className={`${isActive ? 'active' : ''}`} />}</SwiperSlide>
 				))}
 			</Swiper>
-
 			{movieItems.map((item, i) => (
 				<TrailerModal key={i} item={item} />
 			))}
@@ -60,7 +53,7 @@ const HeroSlide = () => {
 };
 
 const HeroSlideItem = props => {
-	let history = useNavigate();
+	let hisrory = useNavigate();
 
 	const item = props.item;
 
@@ -73,7 +66,6 @@ const HeroSlideItem = props => {
 
 		if (videos.results.length > 0) {
 			const videSrc = 'https://www.youtube.com/embed/' + videos.results[0].key;
-
 			modal.querySelector('.modal__content > iframe').setAttribute('src', videSrc);
 		} else {
 			modal.querySelector('.modal__content').innerHTML = 'No trailer';
@@ -87,16 +79,12 @@ const HeroSlideItem = props => {
 			<div className='hero-slide__item__content container'>
 				<div className='hero-slide__item__content__info'>
 					<h2 className='title'>{item.title}</h2>
-
 					<div className='overview'>{item.overview}</div>
-
 					<div className='btns'>
-						<Button onClick={() => history('/movie/' + item.id)}>Watch now</Button>
-
+						<Button onClick={() => hisrory.push('/movie/' + item.id)}>Watch now</Button>
 						<OutlineButton onClick={setModalActive}>Watch trailer</OutlineButton>
 					</div>
 				</div>
-
 				<div className='hero-slide__item__content__poster'>
 					<img src={apiConfig.w500Image(item.poster_path)} alt='' />
 				</div>

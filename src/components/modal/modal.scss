@@ -10,6 +10,8 @@
 	bottom: 0;
 	overflow: auto;
 	background-color: rgba($color: $black, $alpha: 0.4);
+	opacity: 0;
+	visibility: hidden;
 
 	&.active {
 		opacity: 1;

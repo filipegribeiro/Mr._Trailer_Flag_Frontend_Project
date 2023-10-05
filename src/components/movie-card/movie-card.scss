@@ -30,7 +30,6 @@
 		border-radius: $border-radius;
 	}
 
-	/* minuto 1:52:02 */
 	@media (hover: hover) and (pointer: fine) {
 		&:hover::before {
 			opacity: 0.8;
