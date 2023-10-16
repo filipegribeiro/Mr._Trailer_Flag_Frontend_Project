@@ -1,0 +1,76 @@
+{
+	"posts": [
+		{
+			"id": 2,
+			"title": "Blue Beetle",
+			"body": "Um filme de super-heróis que não envolve viagens no tempo ou multiversos - graças a Deus",
+			"author": "Clarisse Loughrey, The Independent"
+		},
+		{
+			"id": 3,
+			"title": "Gran Turismo: Based on a True Story",
+			"body": "O conto da vida real de Neill Blomkamp, realizador de Distrito 9, é incapaz de evitar os clichés, mas proporciona um entretenimento de primeira",
+			"author": "Mark Kermode, The Guardian"
+		},
+		{
+			"id": 4,
+			"title": "57 Seconds",
+			"body": "Apesar das suas claras restrições orçamentais e do seu estilo elementar, 57 Segundos é um filme que não tem nada a ver com o que deveria ter.",
+			"author": "Alex Welch, Inverse"
+		},
+		{
+			"id": 5,
+			"title": "Mission: Impossible - Dead Reckoning Part One",
+			"body": "O filme pode ser apreciado como uma prova irrefutável do que pode ser feito com este tipo de proposta quando colocado nas mãos certas.",
+			"author": "Sergio Burstein, Los Angeles Times"
+		},
+		{
+			"id": 6,
+			"title": "The Creator",
+			"body": "O Criador é uma nova e importante aventura de ficção científica. Se gosta deste tipo de coisas, o ambicioso e envolvente filme de Edwards deverá provocar o inebriante espanto que poderá ter sentido com Matrix e Avatar - a sensação de estar a assistir a uma rica visão do futuro, diferente de tudo o que já foi visto no grande ecrã.",
+			"author": "Nicholas Barber, BBC.com"
+		},
+		{
+			"id": 7,
+			"title": "Saw X",
+			"body": "Dez filmes depois, é uma rotina com a qual estamos tão intimamente familiarizados que seria difícil chamar qualquer elemento de Saw X de original, mas o realizador Kevin Greutert sabe o que vai satisfazer o seu público: alguns baldes de sangue e o som indutor de mordaça de ossos esmagados. Aqui, eles terão exatamente o que querem.",
+			"author": "The Independent"
+		},
+		{
+			"id": 8,
+			"title": "Paw Patrol: The Mighty Movie",
+			"body": "Esta não é a melhor iteração dos filmes de salvamento cheios de aventura, e haverá certamente mais sequelas, e talvez piores",
+			"author": "The Guardian"
+		},
+		{
+			"id": 9,
+			"title": "Sound of Freedom",
+			"body": "É bizarro, inquietante e, no entanto - no equivalente cinematográfico de transformar o vinho em água -, é agradavelmente aborrecido.",
+			"author": "Ed Power, Daily Telegraph (UK)"
+		},
+		{
+			"id": 10,
+			"title": "Retaliação",
+			"body": "...com um desempenho brilhante, inquietante e cativante, Bloom estabeleceu-se como uma presença intensa, física e dominadora no ecrã...",
+			"author": "Richard Roeper, Chicago Sun-Times"
+		},
+		{
+			"id": 11,
+			"title": "Nowhere",
+			"body": "Já todos ouvimos histórias sobre mães que conseguem levantar carros para salvar os seus filhos e Castillo consegue vender a ideia de que desistir não é uma opção nem para o filho nem para ela mesma.",
+			"author": "Brian Tallerico, rogerebert.com"
+		},
+		{
+			"id": 12,
+			"title": "The Nun II",
+			"body": "Não há nada de assustador na freira demoníaca que regressa para aterrorizar a França nesta sequela sem sentido.",
+			"author": "The Guardian"
+		},
+		{
+			"id": 13,
+			"title": "Talk to me",
+			"body": "Talk to Me - um filme de terror indie que coloca uma dor inconsolável num cenário de tédio adolescente - é o verdadeiro triunfo das bilheteiras de verão..",
+			"author": "The Washington Post"
+		}
+	]
+}

@@ -1,0 +1,132 @@
+@use '../../scss/' as *;
+
+.blog {
+	background-image: url('../../assets/footer-bg.jpg');
+	color: $white;
+	height: 100%;
+}
+
+.blog__wrapper {
+	display: flex;
+	flex-wrap: wrap;
+}
+
+.blog__header {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	width: 100%;
+	padding: 10rem 0 0;
+	box-shadow: 0px 0px 5px 6px rgba(170, 255, 0, 0.3019607843);
+
+	& h2 {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+	}
+}
+
+.blog__btn {
+	display: inline-block;
+	background: $black;
+	padding: 1rem 2rem;
+	margin: 1rem 1rem 0 0;
+	transition: all 400ms ease;
+	cursor: pointer;
+	border-radius: 30px;
+
+	&.blog__btn.update:hover {
+		background: $main-color;
+		color: $black;
+		box-shadow: 0px 0px 7px 8px rgba(170, 255, 0, 0.3019607843);
+		transition: box-shadow 0.3s ease;
+		cursor: pointer;
+	}
+
+	&.blog__btn.delete:hover {
+		background: red;
+		color: $black;
+		font-weight: 600;
+		box-shadow: 0px 0px 7px 8px rgba(255, 0, 0, 0.302);
+		transition: box-shadow 0.3s ease;
+		cursor: pointer;
+	}
+}
+
+.blog__posts {
+	display: flex;
+	flex-wrap: wrap;
+	margin: 0 1rem;
+}
+
+.blog__post {
+	width: 50%;
+	flex: 0 0 auto;
+	padding: 2rem;
+	border: 2px solid $main-color;
+	box-shadow: 2px 2px $main-color;
+	border-radius: 30px;
+	margin-top: 1rem;
+
+	& div {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+	}
+}
+
+.blog__post h3 {
+	color: $white;
+	padding: 1rem 1rem;
+	max-width: 500px; /* Ajuste conforme necessário */
+	white-space: nowrap;
+	overflow: hidden;
+	text-overflow: ellipsis;
+}
+
+.blog__post p {
+	padding: 1rem 1rem;
+}
+
+.blog__post__author {
+	display: flex;
+	align-items: center;
+	justify-content: end;
+}
+
+.pagination {
+	display: flex;
+	align-items: center;
+	align-content: center;
+	justify-content: center;
+	margin: 2.5rem 0;
+
+	&.pagination button {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		padding: 1rem;
+		background: transparent;
+		color: $white;
+		cursor: pointer;
+		border-radius: 30px;
+	}
+	&.pagination button:hover {
+		background: $black;
+		color: $main-color;
+		box-shadow: 0px 0px 7px 8px rgba(170, 255, 0, 0.3019607843);
+		transition: box-shadow 0.3s ease;
+		cursor: pointer;
+	}
+
+	&.pagination button.active {
+		background: $main-color;
+		color: $black;
+	}
+
+	&.pagination span {
+		display: inline-block;
+		padding: 0 1rem;
+		font-size: 2rem;
+	}
+}

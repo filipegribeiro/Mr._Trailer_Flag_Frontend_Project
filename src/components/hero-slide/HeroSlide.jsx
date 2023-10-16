@@ -122,3 +122,29 @@ const TrailerModal = props => {
 };
 
 export default HeroSlide;
+
+// O documento HeroSlide.jsx é um componente React que faz parte do projeto. Ele é responsável por renderizar um slide na interface do usuário.
+
+// Aqui está uma explicação básica do código:
+
+// O código importa várias bibliotecas e componentes necessários, como React, Swiper, Button, Modal, etc.
+
+// O componente HeroSlide é definido como uma função sem argumentos. Ele usa os hooks useState, useEffect e useNavigate do React.
+
+// O componente HeroSlide possui um estado movieItems que é inicializado com um array vazio usando o hook useState.
+
+// O hook useEffect é usado para buscar filmes populares do serviço TMDB e atualizar o estado movieItems com os resultados.
+
+// O componente HeroSlide retorna um JSX que contém o componente Swiper do pacote Swiper, que é um carrossel de slides.
+
+// Dentro do Swiper, o componente SwiperSlide é usado para renderizar cada slide do carrossel. O componente HeroSlideItem é usado como o conteúdo de cada slide.
+
+// Além disso, o componente TrailerModal é renderizado para cada item de filme no estado movieItems.
+
+// O componente HeroSlideItem é definido como uma função que recebe as propriedades item e className. Ele renderiza o conteúdo de cada slide do carrossel, incluindo o título, descrição, botões e imagem do filme.
+
+// O componente TrailerModal é definido como uma função que recebe a propriedade item. Ele renderiza um modal que exibe o trailer do filme quando o botão "Watch trailer" é clicado.
+
+// Finalmente, o componente HeroSlide e o componente HeroSlideItem são exportados como padrão para que possam ser usados em outros componentes do projeto.
+
+// Resumidamente, o documento HeroSlide.jsx é responsável por renderizar um slide na interface do usuário do projeto. Ele busca filmes populares, exibe informações sobre os filmes e permite assistir ao trailer dos filmes.

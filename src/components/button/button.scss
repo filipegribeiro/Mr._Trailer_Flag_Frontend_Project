@@ -23,7 +23,7 @@ button {
 }
 
 .btn-outline {
-	border: 3px solid $white;
+	border: 3px solid $main-color;
 	background-color: transparent;
 	color: $white;
 	box-shadow: unset;
@@ -33,7 +33,7 @@ button {
 .btn-outline:hover {
 	box-shadow: unset;
 	color: $main-color;
-	background-color: $white;
+	background-color: $black;
 }
 
 .btn.small {
