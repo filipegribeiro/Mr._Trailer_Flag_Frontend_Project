@@ -1,4 +1,4 @@
-# My App
+# MR. TRAILER 
 
 O projeto "Mr. Trailer" é um aplicativo web que permite aos usuários navegar e interagir com diferentes recursos, como filmes, séries, posts de blog e páginas de contato. O aplicativo utiliza um roteamento baseado em URL para direcionar os usuários para as páginas relevantes com base nas suas ações e na URL atual.
 
